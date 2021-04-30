@@ -1,0 +1,13 @@
+table{
+border: 2px solid red;
+width:50%;
+margin-left:25%;
+margin-right:25%;
+border-collapse: collapse;
+}
+
+td{
+border: 2px solid red;
+text-align: center;
+padding:2px;
+}

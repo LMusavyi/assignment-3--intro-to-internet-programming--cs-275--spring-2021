@@ -11,13 +11,3 @@ td {
   text-align: center;
   padding: 2px;
 }
-
-.rotate {
-  transform: rotate(180deg);
-  transition: transform .5s;
-}
-
-.revert {
-  transform: rotate(0deg);
-  transition: transform .5s;
-}

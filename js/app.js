@@ -1,130 +1,117 @@
 window.onload = () => {
+  //Means to identify each table element
 
-    //Means to identify each table element
+  let boxA = document.querySelectorAll("td")[0];
+  let boxB = document.querySelectorAll("td")[1];
+  let boxC = document.querySelectorAll("td")[2];
+  let boxD = document.querySelectorAll("td")[3];
 
-    let A = document.querySelectorAll('td')[0];
-    let B = document.querySelectorAll('td')[1];
-    let C = document.querySelectorAll('td')[2];
-    let D = document.querySelectorAll('td')[3];
+  //Setting box position defaults
+  let isrotatedA = false;
+  let isrotatedB = false;
+  let isrotatedC = false;
+  let isrotatedD = false;
 
+  //Event handlers to initiate each rotation and reversion
 
+  let rotationA = () => {
+    if (!isrotatedA) {
+      boxA.style.transition = `transform .5s`;
+      boxA.style.transform = `rotate(180deg)`;
+      boxB.style.transition = `transform .5s`;
+      boxB.style.transform = `rotate(0deg)`;
+      boxC.style.transition = `transform .5s`;
+      boxC.style.transform = `rotate(0deg)`;
+      boxD.style.transition = `transform .5s`;
+      boxD.style.transform = `rotate(0deg)`;
+      isrotatedA = true;
+    } else {
+      boxA.style.transition = `transform .5s`;
+      boxA.style.transform = `rotate(0deg)`;
+      boxB.style.transition = `transform .5s`;
+      boxB.style.transform = `rotate(0deg)`;
+      boxC.style.transition = `transform .5s`;
+      boxC.style.transform = `rotate(0deg)`;
+      boxD.style.transition = `transform .5s`;
+      boxD.style.transform = `rotate(0deg)`;
+      isrotatedA = false;
+    }
+  };
 
-    //Setting box position defaults
-    let isrotatedA = false;
-    let isrotatedB = false;
-    let isrotatedC = false;
-    let isrotatedD = false;
+  let rotationB = () => {
+    if (!isrotatedB) {
+      boxB.style.transition = `transform .5s`;
+      boxB.style.transform = `rotate(180deg)`;
+      boxC.style.transition = `transform .5s`;
+      boxC.style.transform = `rotate(0deg)`;
+      boxD.style.transition = `transform .5s`;
+      boxD.style.transform = `rotate(0deg)`;
+      boxA.style.transition = `transform .5s`;
+      boxA.style.transform = `rotate(0deg)`;
+      isrotatedB = true;
+    } else {
+      boxB.style.transition = `transform .5s`;
+      boxB.style.transform = `rotate(0deg)`;
+      boxA.style.transition = `transform .5s`;
+      boxA.style.transform = `rotate(0deg)`;
+      boxC.style.transition = `transform .5s`;
+      boxC.style.transform = `rotate(0deg)`;
+      boxD.style.transition = `transform .5s`;
+      boxD.style.transform = `rotate(0deg)`;
+      isrotatedB = false;
+    }
+  };
 
-//Event handlers to initiate each rotation and reversion
-let rotateA = () => {
-  A.style.transform = 'rotate(180deg)';
-  A.style.transition= 'transform .5s';
-}
+  let rotationC = () => {
+    if (!isrotatedC) {
+      boxC.style.transition = `transform .5s`;
+      boxC.style.transform = `rotate(180deg)`;
+      boxA.style.transition = `transform .5s`;
+      boxA.style.transform = `rotate(0deg)`;
+      boxD.style.transition = `transform .5s`;
+      boxD.style.transform = `rotate(0deg)`;
+      boxB.style.transition = `transform .5s`;
+      boxB.style.transform = `rotate(0deg)`;
+      isrotatedC = true;
+    } else {
+      boxC.style.transition = `transform .5s`;
+      boxC.style.transform = `rotate(0deg)`;
+      boxB.style.transition = `transform .5s`;
+      boxB.style.transform = `rotate(0deg)`;
+      boxA.style.transition = `transform .5s`;
+      boxA.style.transform = `rotate(0deg)`;
+      boxD.style.transition = `transform .5s`;
+      boxD.style.transform = `rotate(0deg)`;
+      isrotatedC = false;
+    }
+  };
 
-let revertA = () =>{
-  A.style.transform = 'rotate(0deg)';
-  A.style.transition= 'transform .5s';
-};
+  let rotationD = () => {
+    if (!isrotatedD) {
+      boxD.style.transition = `transform .5s`;
+      boxD.style.transform = `rotate(180deg)`;
+      boxB.style.transition = `transform .5s`;
+      boxB.style.transform = `rotate(0deg)`;
+      boxC.style.transition = `transform .5s`;
+      boxC.style.transform = `rotate(0deg)`;
+      boxA.style.transition = `transform .5s`;
+      boxA.style.transform = `rotate(0deg)`;
+      isrotatedD = true;
+    } else {
+      boxD.style.transition = `transform .5s`;
+      boxD.style.transform = `rotate(0deg)`;
+      boxB.style.transition = `transform .5s`;
+      boxB.style.transform = `rotate(0deg)`;
+      boxC.style.transition = `transform .5s`;
+      boxC.style.transform = `rotate(0deg)`;
+      boxA.style.transition = `transform .5s`;
+      boxA.style.transform = `rotate(0deg)`;
+      isrotatedD = false;
+    }
+  };
 
-
-let rotateB = () => {
-  B.style.transform = 'rotate(180deg)';
-  B.style.transition= 'transform .5s';
-};
-
-let revertB = () =>{
-  B.style.transform = 'rotate(0deg)';
-  B.style.transition= 'transform .5s';
-};
-
-let rotateC = () => {
-  C.style.transform = 'rotate(180deg)';
-  C.style.transition= 'transform .5s';
-};
-
-let revertC = () =>{
-  C.style.transform = 'rotate(0deg)';
-  C.style.transition= 'transform .5s';
-};
-
-
-let rotateD = () => {
-  D.style.transform = 'rotate(180deg)';
-  D.style.transition= 'transform .5s';
-};
-
-let revertD = () =>{
-  D.style.transform = 'rotate(0deg)';
-  D.style.transition= 'transform .5s';
-};
-
-function rotationsA() {
-  if(isrotatedA=false) {
-    rotateA;
-    revertB;
-    revertC;
-    revertD;
-      isrotatedA=true;
-    }else(isrotatedA=true) {
-    revertA;
-    revertB;
-    revertC;
-    revertD;
-
-  isrotatedA=false;
-}
-};
-
-function rotationsB() {
-  if(isrotatedB=false) {
-    rotateA;
-    revertB;
-    revertC;
-    revertD;
-      isrotatedA=true;
-    }else(isrotatedA=true) {
-      revertA;
-      revertB;
-      revertC;
-      revertD;
-  isrotatedB=false;
-}
-};
-
-
-    function rotationsC() {
-        if(isrotatedC=false){
-          rotateC;
-          revertA;
-          revertB;
-          revertD;
-            isrotatedC=true;
-          }if(isrotatedC=true){
-            revertA;
-            revertB;
-            revertC;
-            revertD;
-        isrotatedC=false;
-      }
-        };
-
-        fucntion rotationsD() {
-          if(isrotatedD=false){
-            rotateD;
-            revertB;
-            revertC;
-            revertA;
-              isrotatedD=true;
-            }if(isrotatedA=true){
-              revertA;
-              revertB;
-              revertC;
-              revertD;
-          isrotatedD=false;
-        }
-          };
-A.addEventListener('click',rotationsA());
-B.addEventListener('click',rotationsB);
-C.addEventListener('click',rotationsC);
-D.addEventListener('click',rotationsD);
+  boxA.addEventListener("click", rotationA);
+  boxB.addEventListener("click", rotationB);
+  boxC.addEventListener("click", rotationC);
+  boxD.addEventListener("click", rotationD);
 };
